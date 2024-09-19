@@ -42,7 +42,7 @@ export default function Page() {
       return row.motorOutput > row.shaftWattage * 1.1
     })
     .append(["minDiameter"], ["_軸径"], (row) => {
-      const d = 125 * Math.pow(45 / row.motorRev, 1 / 3)
+      const d = 125 * Math.pow(row.motorOutput / row.motorRev, 1 / 3)
       const key = keyTable.find((row) => row.keyDiameterMin <= d + 10 && d + 10 <= row.keyDiameterMax)!
       const e1 = 1 - (0.2 * key.keyWidth) / d - (1.1 * key.keyDepth1) / d
       return { minDiameter: d / Math.pow(e1, 1 / 3) }

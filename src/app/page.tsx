@@ -5,6 +5,7 @@ import { newTable } from "@/app/table"
 import { diameterTable, impellerTable, keyTable, motorOutputTable, motorTable, pumpEfficiencyTable } from "@/app/data"
 import { useSearchParams } from "next/navigation"
 import { TableView } from "@/app/table-view"
+import pageStyles from "@/app/page.module.css"
 
 export default function Page() {
   const searchParams = useSearchParams()
@@ -143,10 +144,19 @@ export default function Page() {
 
   return (
     <div>
-      <div>
-        <input type="number" value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} />
-        <input type="number" value={head} onChange={(e) => setHead(Number(e.target.value))} />
-        <input type="number" value={frequency} onChange={(e) => setFrequency(Number(e.target.value))} />
+      <div className={pageStyles.inputs}>
+        <label className={pageStyles.label}>
+          <span>流量</span>
+          <input type="number" value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} />
+        </label>
+        <label className={pageStyles.label}>
+          <span>全揚程</span>
+          <input type="number" value={head} onChange={(e) => setHead(Number(e.target.value))} />
+        </label>
+        <label className={pageStyles.label}>
+          <span>周波数</span>
+          <input type="number" value={frequency} onChange={(e) => setFrequency(Number(e.target.value))} />
+        </label>
       </div>
       <TableView table={data} />
     </div>

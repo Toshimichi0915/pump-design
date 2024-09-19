@@ -1,0 +1,15 @@
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #eeeeee;
+    margin-bottom: 10px;
+    max-width: 600px;
+}
+
+.label {
+    display: flex;
+    justify-content: space-between;
+}

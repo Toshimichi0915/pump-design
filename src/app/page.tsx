@@ -134,12 +134,16 @@ export default function Page() {
         impellerEntranceWidth: b1,
       }
     })
-    .filter((row) => {
+    .append(["bladeCountRecalculation"], ["羽根数（再計算）"], (row) => {
       const z =
         ((6.5 * (row.impellerEntranceOuterDiameter + row.d1)) / (row.impellerEntranceOuterDiameter - row.d1)) *
         Math.sin(((row.impellerEntranceAngle + 22.5) * Math.PI) / 180 / 2)
-
-      return Math.abs(z - row.bladeCount) < 2
+      return {
+        bladeCountRecalculation: z
+      }
+    })
+    .filter((row) => {
+      return Math.abs(row.bladeCountRecalculation - row.bladeCount) < 2
     })
 
   return (

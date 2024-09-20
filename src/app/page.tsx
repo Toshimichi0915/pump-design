@@ -62,7 +62,7 @@ export default function Page() {
     .append(["keyLength", "impellerBossLength"], ["キー長さ", "羽根車ボス長さ"], (row) => {
       const lkMin = row.shearForce / 10 / 71
       const lbMin = row.shearForce / (row.keyDepth2 - 0.3) / 62.5
-      const keyLength = Math.ceil(Math.max(lkMin, lbMin) + 10)
+      const keyLength = Math.ceil(Math.max(lkMin, lbMin) + row.keyWidth)
       return {
         keyLength,
         impellerBossLength: keyLength + 8,

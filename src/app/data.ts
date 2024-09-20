@@ -154,7 +154,7 @@ export const diameterTable = newTable(
 export const impellerTable = newTable(
   "羽根車",
   ["impellerSpeedRatio", "kM1", "kM2", "kU", "kV"],
-  ["比速度", "Km1", "Km2", "Ku", "Kv"],
+  ["_比速度", "Km1", "Km2", "Ku", "Kv"],
   [
     [100, 0.120, 0.08, 0.93, 0.5],
     [140, 0.130, 0.115, 0.95, 0.48],
